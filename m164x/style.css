@@ -1,0 +1,250 @@
+:root {
+  --blue: #59bab7;
+  --grey: #f3efe0;
+  --border_color: rgb(242, 239, 224);
+  --black: rgb(34, 34, 34);
+  --blue2: rgb(34, 163, 159);
+  --footer: rgb(67, 66, 66);
+  --contacts: rgb(180, 179, 179);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/*-----------------------------------------                    menu styling---------------------------------------------------------------------------------*/
+
+@keyframes menu_check_mark {
+  from {
+    transform: translateY(3px);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes menu {
+  from {
+    background-color: var(--black);
+  }
+  to {
+    background-color: var(--blue);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  width: 100px;
+  position: fixed;
+  right: 0;
+  transform: translateY(-100vh);
+  overflow: hidden;
+}
+
+ul li a {
+  color: var(--grey);
+  display: block;
+  padding-top: 40px;
+}
+
+ul li {
+  height: 100px;
+  width: 100px;
+  border: 2px solid var(--grey);
+  text-align: center;
+  background-color: var(--black);
+  text-transform: uppercase;
+}
+
+a>img {
+  filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
+  animation-name: menu_check_mark;
+  animation-iteration-count: infinite;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+ul li:hover>a {
+  color: var(--footer);
+}
+
+.profile:hover~ul li:nth-child(2) {
+  background-color: var(--blue);
+}
+
+.projects:hover~ul li:nth-child(3) {
+  background-color: var(--blue);
+}
+
+.contacts:hover~ul li:nth-child(4) {
+  background-color: var(--blue);
+}
+@media screen (wi)
+
+/*-----------------------------------------                    menu styling---------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------HAMBURGER----------------------------------------------------------------------------------------------*/
+
+.hamburger {
+  width: 20px;
+  height: 20px;
+  background-color: var(--black);
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: 10px;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+}
+
+label span {
+  background: var(--grey);
+  height: 1px;
+  margin: 1px 0;
+}
+
+span {
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotateZ(45deg) translate(1px, 3px);
+  transition: .4s ease-in-out;
+  margin-left: 0;
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotateZ(-45deg) translate(-1px, -1px);
+  transition: .4s ease-in-out;
+  margin-left: 0;
+}
+
+input[type="checkbox"]:checked~span:nth-of-type(3) {
+  display: none;
+}
+
+.hamburger:hover {
+ 
+  transition: .5s ease-in-out;
+  
+  
+}
+
+
+
+/*----------------------------------------------------GAMBURGER----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
+
+/*
+
+html {
+  font-family: sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+header {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 30vw 0 5vw;
+  position: relative;
+  transform-style: inherit;
+  width: 100vw;
+}
+header h1 {
+  margin-top: -100px;
+}
+header,
+header::before {
+  background: 50% 50% / cover;
+}
+header::before {
+  bottom: 0;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+
+  background-image: url(assets/images/comp.jpg);
+  background-size: cover;
+  transform-origin: center center 0;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+  min-height: 100vh;
+}
+header * {
+}*/
+
+/*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
+
+.profile {
+  width: 100vw;
+  height: 80vh;
+}
+
+.profile img {
+  height: 200px;
+  border: 10px solid var(--border_color);
+  border-radius: 50%;
+}
+
+.stars {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
+
+.projects {}
+
+.project_info_icon img {
+  height: 30px;
+  filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
+  margin: 2px 2px 2px 2px;
+  padding-left: 5px;
+}
+
+.project_info_icon {
+  height: 30px;
+  width: 40px;
+  background-color: var(--blue);
+  padding: 2px 2px 6px 2px;
+}
+
+/*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
