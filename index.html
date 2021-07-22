@@ -8,26 +8,37 @@
   <meta name="description" content="Free Web tutorials">
   <meta name="keywords" content="HTML, CSS">
   <meta name="author" content="Shuliak Lyubov">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-  <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
 </head>
 
 <body>
-  <div class="hamburger"><label for="check">
+  
+  <div class="hamburger">
+    <label for="check">
       <input type="checkbox" id="check" />
       <span></span>
       <span></span>
       <span></span>
-    </label></div>
-<div class="portfolio">
-  <header>
-    <h1>Shuliak Lyubov</h1>
-    <h2>Portfolio</h2>
-  </header>
-</div>
+        <ul>
+          <li><a href="#profile"><img src="assets/images/check-mark-menu.svg" alt=""></a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#contacts">contacts</a></li>
+        </ul>
+    </label>
+    
+    
+  </div>
+  <div class="portfolio">
+    <header>
+      <h1>Shuliak Lyubov</h1>
+      <h2>Portfolio</h2>
+    </header>
+  </div>
 
   <div id="profile" class="profile">
     <h2>Profile</h2>
@@ -44,68 +55,82 @@
       </p>
     </div>
     <div class="skills">
+      <p><strong>My skills:</strong></p>
       <p>HTML/CSS <span class="stars">&#10029;&#10029;&#10029;&#10029;&#10029;</span></p>
       <p>Figma <span class="stars">&#10029;&#10029;</span></p>
     </div>
   </div>
-  
+  <!--project---------------------------------------------------------------------------
+    
+    
+    
+    -------------------------------------------->
   <div id="projects" class="projects">
     <h2>Projects</h2>
     <div class="project">
-      <div>
-        <div class="project_info_icon">
-          <img src="assets/images/project_info.svg" alt="">
+      <div class="project_description">
+        <div class="project_infomation">
+          <a href=""></a>
+        <p>Made with HTML / CSS</p>
         </div>
-        <img src="" alt="">
-      </div>
-
-      <div class="project_infomation">
-        <a href=""></a>
-        <p></p>
-        <a href=""></a>
-        <a href=""></a>
-      </div>
-    </div>
-    <div class="project">
-      <div>
-        <div class="project_info_icon">
-          <img src="assets/images/project_info.svg" alt="">
+        <div class="project_info_icon"> 
+        <img src="assets/images/project_info.svg" alt="">
         </div>
-        <img src="" alt="">
       </div>
+      
+    </div>
 
-      <div class="project_infomation">
-        <p></p>
-        <a href=""></a>
-        <a href=""></a>
+      <div class="project">
+        <div class="project_description">
+          <div class="project_infomation">
+            <a href=""></a>
+            <p>Made with HTML / CSS</p>
+          </div>
+          <div class="project_info_icon">
+            <img src="assets/images/project_info.svg" alt="">
+          </div>
+        </div>
+        
       </div>
-    </div>
-    <div class="project">
-      <img src="" alt="">
-      <div class="project_infomation">
-        <p></p>
-        <a href=""></a>
-        <a href=""></a>
-      </div>
-    </div>
-    <div class="project">
-      <img src="" alt="">
-      <div class="project_infomation">
-        <p></p>
-        <a href=""></a>
-        <a href=""></a>
-      </div>
-    </div>
+        <div class="project">
+          <div class="project_description">
+            <div class="project_infomation">
+              <a href=""></a>
+              <p>Made with HTML / CSS</p>
+            </div>
+            <div class="project_info_icon">
+              <img src="assets/images/project_info.svg" alt="">
+            </div>
+          </div>
+          
+        </div>
+          <div class="project">
+            <div class="project_description">
+              <div class="project_infomation">
+                <a href=""></a>
+                <p>Made with HTML / CSS</p>
+              </div>
+              <div class="project_info_icon">
+                <img src="assets/images/project_info.svg" alt="">
+              </div>
+            </div>
+            
+          </div>
   </div>
- 
+  <!--project------------------------------
+    
+    
+    
+    
+    ----------------------------------------------------------------------------------------->
   <div id="contacts" class="contacts">contacts</div>
-
+</div>
   <ul>
     <li><a href="#profile"><img src="assets/images/check-mark-menu.svg" alt=""></a></li>
     <li><a href="#profile">Profile</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#contacts">contacts</a></li>
-  </ul>
+  </ul> 
 </body>
 
 </html>
