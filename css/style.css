@@ -1,22 +1,436 @@
-    :root {
-       --blue: #59bab7;
-       --grey: #f3efe0;
-       --border_color: rgb(242, 239, 224);
-       --black: rgb(34, 34, 34);
-       --blue2: rgb(34, 163, 159);
-       --footer: rgb(67, 66, 66);
-       --contacts: rgb(180, 179, 179);
-   }
-   
-   html {
-       scroll-behavior: smooth;
-   }
-   
-   body {
-       margin: 8px;
-   }
-   /*---------------------------------------- menu styling---------------------------------------------------------------------------------*/
-   /* .projects {
+:root {
+    --blue: #59bab7;
+    --grey: #f3efe0;
+    --border_color: rgb(242, 239, 224);
+    --black: rgb(34, 34, 34);
+    --blue2: rgb(34, 163, 159);
+    --footer: rgb(67, 66, 66);
+    --contacts: rgb(180, 179, 179);
+}
+
+@font-face {
+    font-family: "Concert";
+    src: url("../assets/fonts/Concert_One/ConcertOne-Regular.ttf") format("truetype");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.contacts {
+    background-color: var(--footer);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.contacts ul li {
+    margin-top: 10px;
+    height: 40px;
+    display: list-item;
+}
+
+ul li img {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.parallax {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+h2, p, h1, h3 {
+    margin: 0;
+}
+
+h1 {
+    font-family: "Concert";
+    width: 100%;
+    line-height: 80px;
+    font-size: 40px;
+    background: black;
+    color: white;
+    mix-blend-mode: multiply;
+    text-align: center;
+}
+
+header h2 {
+    color: white;
+    box-shadow: 2px 2px 0 -2px var(--blue2);
+}
+
+h2 {
+    color: var(--blue);
+    font-size: 40px;
+    border-bottom: 1px solid var(--blue2);
+    width: 100%;
+    text-align: center;
+    line-height: 70px;
+}
+
+h3 {
+    color: var(--blue2);
+}
+
+header {
+    width: 100%;
+}
+
+.portfolio {
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+header {
+    justify-self: flex-end;
+    align-self: end;
+}
+
+.portfolio {
+    width: 100%;
+}
+
+/*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.parallax {
+    background-image: url("../assets/images/comp.jpg");
+    height: 40%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
+
+.profile img {
+    height: 200px;
+    border: 10px solid var(--border_color);
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.stars {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
+
+@keyframes project {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+        animation-delay: 800ms;
+    }
+}
+
+.project_description img {
+    height: 30px;
+    filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
+    margin: 2px 2px 2px 2px;
+    transition: 500ms ease-in-out;
+    z-index: 2;
+}
+
+.project {
+    position: relative;
+    background-image: url(../assets/images/project_screen_1.jpg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    cursor: pointer;
+}
+
+.project_description {
+    width: 0px;
+    height: 0px;
+    background-color: var(--blue);
+    opacity: 0.81;
+    margin: 0;
+    position: absolute;
+    margin-left: 260px;
+    z-index: 1;
+    border-radius: 2%;
+}
+
+.project a {
+    width: 60%;
+    height: 60%;
+    margin: 0;
+    opacity: 0;
+    z-index: 21;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20% 20% 20% 20%;
+    color: white;
+}
+
+.project:hover>.project_description {
+    height: 300px;
+    width: 300px;
+    transform: translateX(-260px);
+    animation-name: project;
+    animation-duration: 300ms;
+}
+
+.project:hover>a {
+    opacity: 1;
+}
+
+/*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
+
+/* +++++++++++++++media --------------
+         
+
+
+
+588px                                                           --**************************   max-width: 768px  -----------------------------*/
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+    .projects {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        display: grid;
+        max-width: 80vw;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        justify-items: center;
+    }
+    .hamburger {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: calc(100%-50px);
+        height: 40px;
+        background-color: var(--black);
+        display: flex;
+        justify-content: right;
+    }
+    label {
+        display: flex;
+        flex-direction: column;
+        width: 40px;
+        cursor: pointer;
+        padding: 5px 5px 5px 5px;
+        align-items: center;
+    }
+    label span {
+        background: var(--grey);
+        height: 2px;
+        margin: 4px 0;
+        transition: .4s ease-in-out;
+    }
+    span {
+        width: 70%;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"]:checked~span:nth-of-type(1) {
+        transform-origin: bottom;
+        transform: rotateZ(45deg) translate(6px, 7px);
+        transition: .4s ease-in-out;
+        margin-left: 0;
+    }
+    input[type="checkbox"]:checked~span:nth-of-type(2) {
+        transform-origin: top;
+        transform: rotateZ(-45deg) translate(-1px, -1px);
+        transition: .4s ease-in-out;
+        margin-left: 0;
+    }
+    input[type="checkbox"]:checked~span:nth-of-type(3) {
+        opacity: 0;
+    }
+    .menu {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        display: flex;
+        margin: 0;
+        flex-direction: row;
+        margin-left: 40px;
+        height: 40px;
+        justify-content: right;
+        opacity: 0;
+        width: calc(100% - 50px);
+    }
+    input[type="checkbox"]:checked~.menu {
+        opacity: 1;
+    }
+    .hamburger:focus {
+        opacity: 0;
+    }
+    .menu div {
+        display: flex;
+        height: 40px;
+        gap: 2px;
+        background-color: var(--black);
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        justify-content: space-around;
+        color: white;
+        width: 100%;
+    }
+    .hamburger {
+        z-index: 200;
+    }
+    .menu div a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        line-height: 40px;
+        color: white;
+    }
+    .menu div:hover>a {
+        color: var(--blue);
+    }
+    .menu div:hover {
+        transform: translate(2px, -2px);
+        box-shadow: -2px 2px 2px 2px var(--blue);
+    }
+    .menu div:first-of-type {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .profile {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        background-color: var(--grey);
+    }
+    .profile h2, p {
+        grid-column: span 2;
+        margin-bottom: 5px;
+    }
+    .profile img {
+        grid-column: span 2;
+    }
+    .profile div:last-of-type {
+        align-self: center;
+    }
+    h3 {
+        grid-column: span 2;
+    }
+    .skills p strong {
+        color: var(--blue2);
+    }
+    .profile p {
+        margin-top: 10px;
+    }
+    .contacts ul li {
+        line-height: 40px;
+    }
+    .contacts img {
+        height: 40px;
+        background-color: transparent;
+    }
+}
+
+/*************************************************************************************************************************************************************************************/
+
+/* +++++++++++++++media --/* +++++++++++++++min-width:426px
+                                                                                                                    -----------------------------*/
+
+@media screen and (min-width: 768px) {
+    @keyframes menu_check_mark {
+        from {
+            transform: translateY(3px);
+        }
+        to {
+            transform: translateY(-3px);
+        }
+    }
+    @keyframes menu {
+        from {
+            background-color: var(--black);
+        }
+        to {
+            background-color: var(--blue);
+        }
+    }
+    input {
+        display: none;
+    }
+    .menu {
+        list-style-type: none;
+        width: 100px;
+        position: fixed;
+        right: 10px;
+        top: 30%;
+        overflow: hidden;
+        padding-left: 0;
+        z-index: 100;
+    }
+    .menu div a {
+        display: block;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        line-height: 80px;
+        text-align: center;
+    }
+    .menu div {
+        height: 80px;
+        width: 100px;
+        border: 2px solid var(--grey);
+        background-color: var(--black);
+        text-transform: uppercase;
+    }
+    a>img {
+        filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
+        animation-name: menu_check_mark;
+        animation-iteration-count: infinite;
+        animation-duration: 600ms;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+    .menu:hover>a {
+        color: var(--blue);
+    }
+    .projects {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 25px;
@@ -30,305 +444,22 @@
     }
     .project:nth-of-type(3) {
         justify-self: end;
-    }*/
-   /*-----------------------------------------                    menu styling---------------------------------------------------------------------------------*/
-   /*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
-   
-   body,
-   html {
-       height: 100%;
-   }
-   
-   .parallax {
-       background-image: url("../assets/images/comp.jpg");
-       height: 40%;
-       width: calc(100%-150px);
-       background-attachment: fixed;
-       background-position: center;
-       background-repeat: no-repeat;
-       background-size: cover;
-   }
-   /*----------------------------------------------------PARALAX----------------------------------------------------------------------------------------------*/
-   /*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
-   
-   .profile {
-       background: transparent;
-       display: flex;
-       flex-direction: column;
-   }
-   
-   .profile img {
-       height: 200px;
-       border: 10px solid var(--border_color);
-       border-radius: 50%;
-       background-color: transparent;
-   }
-   
-   .stars {
-       color: var(--blue);
-       font-weight: bold;
-   }
-   
-   .hamburger {
-       align-self: flex-end;
-   }
-   /*----------------------------------------------------PROFILE----------------------------------------------------------------------------------------------*/
-   /*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
-   
-   @keyframes project {
-       0% {
-           opacity: 0;
-       }
-       to {
-           opacity: 0.8;
-           animation-delay: 800ms;
-       }
-   }
-   
-   .project_description img {
-       height: 30px;
-       filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
-       margin: 2px 2px 2px 2px;
-       transition: 500ms ease-in-out;
-       z-index: 2;
-   }
-   
-   .project {
-       position: relative;
-       background-image: url(../assets/images/project_screen_1.jpg);
-       background-repeat: no-repeat;
-       width: 300px;
-       height: 300px;
-       border-radius: 2%;
-       display: flex;
-       flex-direction: row;
-       align-content: center;
-       cursor: pointer;
-   }
-   
-   .project_description {
-       width: 0px;
-       height: 0px;
-       background-color: var(--blue);
-       opacity: 0.81;
-       margin: 0;
-       position: absolute;
-       margin-left: 260px;
-       z-index: 1;
-       border-radius: 2%;
-   }
-   
-   .project a {
-       width: 60%;
-       height: 60%;
-       margin: 0;
-       opacity: 0;
-       z-index: 21;
-       text-decoration: none;
-       font-size: 30px;
-       padding: 20% 20% 20% 20%;
-       color: white;
-   }
-   
-   .project:hover>.project_description {
-       height: 300px;
-       width: 300px;
-       transform: translateX(-260px);
-       animation-name: project;
-       animation-duration: 300ms;
-   }
-   
-   .project:hover>a {
-       opacity: 1;
-   }
-   /*----------------------------------------------------PROJECTS----------------------------------------------------------------------------------------------*/
-   /* +++++++++++++++media --------------
-         
-
-
-
-588px                                                           --**************************   max-width: 768px  -----------------------------*/
-   
-   @media screen and (max-width: 768px) {
-       .projects {
-           margin-left: 10vw;
-           margin-right: 10vw;
-           display: grid;
-           max-width: 80vw;
-           grid-template-columns: 1fr;
-           grid-gap: 30px;
-           justify-items: center;
-       }
-   }
-   
-   @media screen and (max-width: 425px) {
-       .hamburger {
-           position: fixed;
-           overflow: hidden;
-           top: 0;
-           left: 0;
-           width: 40px;
-           height: 40px;
-           background-color: var(--black);
-       }
-       label {
-           display: flex;
-           flex-direction: column;
-           width: 40px;
-           cursor: pointer;
-           padding: 5px 5px 5px 5px;
-       }
-       label span {
-           background: var(--grey);
-           height: 2px;
-           margin: 4px 0;
-           transition: .4s ease-in-out;
-       }
-       span {
-           width: 70%;
-       }
-       input[type="checkbox"] {
-           display: none;
-       }
-       input[type="checkbox"]:checked~span:nth-of-type(1) {
-           transform-origin: bottom;
-           transform: rotateZ(45deg) translate(6px, 7px);
-           transition: .4s ease-in-out;
-           margin-left: 0;
-       }
-       input[type="checkbox"]:checked~span:nth-of-type(2) {
-           transform-origin: top;
-           transform: rotateZ(-45deg) translate(-1px, -1px);
-           transition: .4s ease-in-out;
-           margin-left: 0;
-       }
-       input[type="checkbox"]:checked~span:nth-of-type(3) {
-           opacity: 0;
-       }
-       .menu {
-           position: fixed;
-           overflow: hidden;
-           top: 0;
-           right: 0;
-           display: flex;
-           margin: 0;
-           flex-direction: row;
-           margin-left: 40px;
-           height: 40px;
-           justify-content: right;
-           opacity: 1;
-       }
-       input[type="checkbox"]:checked~.menu {
-           opacity: 0;
-       }
-       .hamburger:focus {
-           opacity: 0;
-       }
-       .menu div {
-           display: flex;
-           height: 40px;
-           width: 70px;
-           margin: 2px 2px 2px;
-           background-color: var(--black);
-           text-transform: uppercase;
-           justify-content: space-around;
-       }
-       .menu-1 {
-           display: none;
-       }
-       .hamburger {
-           z-index: 200;
-       }
-       .menu div {
-           font-size: 12px;
-           display: flex;
-           text-align: center;
-       }
-       .menu div a {
-           display: block;
-           text-decoration: none;
-           width: 100%;
-           height: 100%;
-       }
-       .menu div {
-           height: 100%;
-           width: 70px;
-           text-align: center;
-           background-color: var(--black);
-           text-transform: uppercase;
-       }
-       .menu div:hover>a {
-           color: var(--blue);
-       }
-   }
-   /*************************************************************************************************************************************************************************************/
-   /* +++++++++++++++media --/* +++++++++++++++min-width:426px
-                                                                                                                    -----------------------------*/
-   
-   @media screen and (min-width:426px) and (max-width: 768px) {
-       .hamburger {
-           display: none;
-       }
-       @keyframes menu_check_mark {
-           from {
-               transform: translateY(3px);
-           }
-           to {
-               transform: translateY(-3px);
-           }
-       }
-       @keyframes menu {
-           from {
-               background-color: var(--black);
-           }
-           to {
-               background-color: var(--blue);
-           }
-       }
-       .menu-1 {
-           list-style-type: none;
-           width: 100px;
-           position: fixed;
-           right: 10px;
-           top: 30%;
-           overflow: hidden;
-           padding-left: 0;
-           z-index: 100;
-       }
-       .menu-1 div a {
-           display: block;
-           justify-content: center;
-           color: white;
-           text-decoration: none;
-           height: 100%;
-           width: 100%;
-       }
-       .menu-1 div {
-           height: 100px;
-           width: 100px;
-           border: 2px solid var(--grey);
-           text-align: center;
-           background-color: var(--black);
-           text-transform: uppercase;
-       }
-       a>img {
-           filter: invert(100%) sepia(87%) saturate(2%) hue-rotate(270deg) brightness(108%) contrast(101%);
-           animation-name: menu_check_mark;
-           animation-iteration-count: infinite;
-           animation-duration: 600ms;
-           animation-timing-function: ease-in-out;
-           animation-direction: alternate;
-       }
-       .menu-1:hover>a {
-           color: var(--blue);
-       }
-       .profile:hover~.menu-1:nth-child(2) {
-           background-color: var(--blue);
-       }
-       .projects:hover~.menu-1:nth-child(3) {
-           background-color: var(--blue);
-       }
-       .contacts:hover~.menu-1:nth-child(4) {
-           background-color: var(--blue);
-       }
-   }
+    }
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 'h2 h2 h2' 'p p p' 'div1 img skills';
+    }
+    .profile h2 {
+        grid-area: h2;
+    }
+    .profile p {
+        grid-area: p;
+    }
+    .profile div:nth-of-type(1) {
+        grid-area: div1;
+    }
+    .profile .skills {
+        grid-area: skills;
+    }
+}
